@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OUNASS — Brand & Guidelines Hub</title>
+<style>
+  @font-face {
+    font-family: 'Portrait';
+    src: url('assets/fonts/Portrait-Light.otf') format('opentype');
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: 'Portrait Regular 2';
+    src: url('assets/fonts/Portrait-Regular2.otf') format('opentype');
+  }
+  @font-face {
+    font-family: 'Portrait Medium';
+    src: url('assets/fonts/Portrait-Medium.otf') format('opentype');
+  }
+  @font-face {
+    font-family: 'Noto Kufi Arabic';
+    src: url('assets/fonts/NotoKufiArabic-VariableFont_wght.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Noto Serif Display';
+    src: url('assets/fonts/NotoSerifDisplay-VariableFont.ttf') format('truetype');
+  }
+  :root {
+    color-scheme: light;
+    --black: #000000;
+    --almost-black: #181818;
+    --white: #ffffff;
+    --copper: #b87354;
+    --copper-foil: #b06a3e;
+    --dark-grey: #4a4a4a;
+    --light-grey: #e4e4e4;
+    --off-white: #fafafa;
+    --text: #181818;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--white);
+    color: var(--text);
+    font-family: 'Portrait', Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 32px 80px; }
+  header {
+    background: var(--black);
+    color: var(--white);
+    padding: 56px 32px 40px;
+    text-align: center;
+  }
+  header .logo-img { height: 46px; margin-bottom: 14px; }
+  header .arabic-logo-img { height: 40px; margin-bottom: 18px; }
+  header .tagline {
+    font-family: 'Portrait', Georgia, serif;
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin: 0 0 24px;
+  }
+  header h1 {
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0 0 8px;
+  }
+  header p {
+    font-size: 13px;
+    color: var(--light-grey);
+    margin: 0;
+    letter-spacing: 0.5px;
+    font-family: Arial, sans-serif;
+  }
+  .source-note {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 12px 32px;
+    background: #fff8ec;
+    border-bottom: 1px solid var(--light-grey);
+    font-size: 12.5px;
+    color: #8a6d3b;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  section { margin-top: 56px; }
+  h2 {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--copper);
+    border-bottom: 1px solid var(--light-grey);
+    padding-bottom: 14px;
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+  }
+  .section-note {
+    font-size: 12.5px;
+    color: var(--dark-grey);
+    margin-bottom: 24px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .subhead {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--dark-grey);
+    margin: 28px 0 14px;
+    font-family: Arial, sans-serif;
+  }
+  /* Logo */
+  .logo-block {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin-bottom: 8px;
+  }
+  .logo-card {
+    flex: 1 1 220px;
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+    padding: 34px 20px;
+    text-align: center;
+  }
+  .logo-card.light { background: var(--off-white); }
+  .logo-card.dark { background: var(--black); }
+  .logo-card img { height: 56px; width: auto; max-width: 100%; object-fit: contain; }
+  .logo-card .cap { font-size: 10.5px; letter-spacing: 1px; text-transform: uppercase; color: var(--dark-grey); font-family: Arial, sans-serif; margin-top: 14px; }
+  .logo-card.dark .cap { color: var(--light-grey); }
+  /* Colors */
+  .swatches {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+  }
+  .swatch {
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .swatch-color { height: 90px; }
+  .swatch-info { padding: 12px 14px; background: var(--white); font-family: Arial, sans-serif; }
+  .swatch-name { font-size: 13px; font-weight: 600; margin-bottom: 3px; }
+  .swatch-hex { font-size: 12px; color: var(--dark-grey); font-family: monospace; }
+  .swatch-use { font-size: 11px; color: #999; margin-top: 4px; line-height: 1.4; }
+  /* Typography */
+  .type-sample {
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+    padding: 24px 28px;
+    margin-bottom: 16px;
+  }
+  .type-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--dark-grey);
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+  }
+  .type-display { font-size: 32px; margin: 0 0 6px; }
+  .type-display.arabic { font-family: 'Noto Kufi Arabic', sans-serif; direction: rtl; text-align: left; }
+  .type-display.serif-num { font-family: 'Noto Serif Display', serif; }
+  .type-meta { font-size: 12px; color: var(--dark-grey); font-family: Arial, sans-serif; line-height: 1.6; }
+  .type-meta a { color: var(--copper); }
+  /* Downloads */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    display: block;
+    text-decoration: none;
+    border: 1px solid var(--light-grey);
+    border-radius: 6px;
+    padding: 22px 24px;
+    color: var(--text);
+    transition: border-color 0.15s, transform 0.15s;
+    background: var(--off-white);
+    font-family: Arial, sans-serif;
+  }
+  .card:hover {
+    border-color: var(--copper);
+    transform: translateY(-2px);
+  }
+  .card-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; font-family: 'Portrait', Georgia, serif; }
+  .card-sub { font-size: 12px; color: var(--dark-grey); }
+  .card-arrow { float: right; color: var(--copper); font-size: 16px; }
+  .card-arrow.download { font-size: 14px; }
+  footer {
+    text-align: center;
+    padding: 40px 32px 10px;
+    font-size: 11px;
+    color: var(--dark-grey);
+    letter-spacing: 0.5px;
+    font-family: Arial, sans-serif;
+  }
+</style>
+</head>
+<body>
+
+<div class="source-note">
+  Colours, fonts and logo assets below are sourced directly from the internal <strong>Brand Identity</strong> kit and the <strong>2025 Brand &amp; Creative Guidelines</strong>. Logo and font files are downloadable straight from this page — no Dropbox needed.
+</div>
+
+<header>
+  <img class="logo-img" src="assets/previews/eng_white.png" alt="OUNASS" style="height:46px;">
+  <h1>Brand &amp; Guidelines Hub</h1>
+  <p>Colors · Fonts · Logo Assets · Content Guidelines</p>
+</header>
+
+<div class="wrap">
+
+  <section>
+    <h2>Logo</h2>
+    <div class="section-note">
+      The English wordmark is the primary logo and should be used across all brand communications. The Arabic wordmark (أناس) is used for dual-language or Arabic-only communications and has no .com variant. The O monogram and the circular marque are secondary applications — for seals, stickers, favicons and gifting, never as a primary logo.
+    </div>
+    <div class="logo-block">
+      <div class="logo-card light">
+        <img src="assets/previews/eng_black.png" alt="OUNASS wordmark">
+        <div class="cap">English wordmark</div>
+      </div>
+      <div class="logo-card light">
+        <img src="assets/previews/ar_black.png" alt="Arabic wordmark">
+        <div class="cap">Arabic wordmark</div>
+      </div>
+      <div class="logo-card light">
+        <img src="assets/previews/eng_tagline_black.png" alt="OUNASS with tagline">
+        <div class="cap">English + Tagline</div>
+      </div>
+      <div class="logo-card light">
+        <img src="assets/previews/ar_tagline_black.png" alt="Arabic wordmark with tagline">
+        <div class="cap">Arabic + Tagline</div>
+      </div>
+      <div class="logo-card light">
+        <img src="assets/previews/o_black.png" alt="O monogram">
+        <div class="cap">O Monogram</div>
+      </div>
+      <div class="logo-card light">
+        <img src="assets/previews/marque_black.png" alt="The Marque">
+        <div class="cap">The Marque</div>
+      </div>
+      <div class="logo-card light">
+        <img src="assets/previews/copper_logo.png" alt="Copper logo">
+        <div class="cap">Copper Foil Version</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Colour Palette</h2>
+
+    <div class="subhead">Digital Colour Palette</div>
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#000000;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Black</div>
+          <div class="swatch-hex">#000000</div>
+          <div class="swatch-use">Large text / logos</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#181818;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Almost Black</div>
+          <div class="swatch-hex">#181818</div>
+          <div class="swatch-use">Body text, buttons, banner pops</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#4A4A4A;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Dark Grey</div>
+          <div class="swatch-hex">#4A4A4A</div>
+          <div class="swatch-use">Alternative body text / links</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#E4E4E4;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Light Grey</div>
+          <div class="swatch-hex">#E4E4E4</div>
+          <div class="swatch-use">Banner pips</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#FAFAFA; border-bottom:1px solid #e4e4e4;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Off-White</div>
+          <div class="swatch-hex">#FAFAFA</div>
+          <div class="swatch-use">Alt. backgrounds, banners, model imagery</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#B87354;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Copper</div>
+          <div class="swatch-hex">#B87354</div>
+          <div class="swatch-use">Accent — CTAs, prices, active states</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subhead">Print / Brand Colours</div>
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#000000;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Black</div>
+          <div class="swatch-hex">C0 M0 Y0 K100</div>
+          <div class="swatch-use">Logo always capitalised in black on print</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#ffffff; border-bottom:1px solid #e4e4e4;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">White</div>
+          <div class="swatch-hex">C0 M0 Y0 K0</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:linear-gradient(120deg, #5e2f16 0%, #a15a30 12%, #e8b27e 24%, #b97644 34%, #7a3d1d 44%, #c98c54 55%, #f0c491 63%, #8f4c26 74%, #c17a45 85%, #6b3618 100%); background-size: 220% 220%;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Copper Foil</div>
+          <div class="swatch-hex">FOILCO 923 / Pantone 8025 C</div>
+          <div class="swatch-use">Foil stamping on stickers, gifting, embellishment (Pantone for non-foil print). Swatch above approximates the metallic sheen — actual foil colour varies by light and stock.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Textures</h2>
+    <div class="section-note">Print textures used alongside the colour palette — marble is the secondary paper stock, mainly used for wrapping paper and box interiors.</div>
+    <div class="card-grid">
+      <a class="card" href="https://www.dropbox.com/scl/fo/1ozncyco68niufc3scwzc/AEStLmMljxz_AqK_98XkxZU?rlkey=hkrzzblz7f7276tpzwqrv9k49&dl=0" target="_blank" rel="noopener">
+        <span class="card-arrow">↗</span>
+        <div class="card-title">Marble Texture</div>
+        <div class="card-sub">Dropbox folder</div>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Typography</h2>
+    <div class="type-sample">
+      <div class="type-label">Primary Typeface — Portrait Regular 2 (main usage)</div>
+      <div class="type-display" style="font-family:'Portrait Regular 2', Georgia, serif;">Portrait Regular 2 — Aa Bb Cc</div>
+      <div class="type-display" style="font-family:'Portrait Medium', Georgia, serif;">Portrait Medium — Aa Bb Cc</div>
+      <div class="type-meta">
+        <strong>Portrait Regular 2</strong> is our main usage weight for headings, subtitles, campaign advertising, digital marketing and print. The tagline is set in Portrait Light Caps at +75 tracking.<br>
+        Portrait Medium is used for internal / copy-heavy documents only — not in hero communications.<br>
+        This is a paid, licensed font (Commercial Type) — the files below are from the internal kit for authorized team use only. Licensing: <a href="https://commercialtype.com/catalog/portrait" target="_blank" rel="noopener">commercialtype.com/catalog/portrait</a>
+      </div>
+    </div>
+    <div class="type-sample">
+      <div class="type-label">Arabic Typeface — Noto Kufi Arabic Regular (main usage)</div>
+      <div class="type-display arabic">أناس — نص عربي تجريبي</div>
+      <div class="type-meta">Noto Kufi Arabic is our dedicated Arabic typeface in its own right — not a substitute for Portrait. Regular is the main usage weight, used on digital banners, print and e-mailers. Free &amp; open source (SIL Open Font License).</div>
+    </div>
+    <div class="type-sample">
+      <div class="type-label">Numericals</div>
+      <div class="type-display serif-num">0123456789</div>
+      <div class="type-meta">Noto Serif Display is the main font for numericals; Portrait is the secondary numerical font.</div>
+    </div>
+    <div class="type-sample">
+      <div class="type-label">Secondary / Body Copy</div>
+      <div class="type-display" style="font-family:Arial, sans-serif; font-size:20px;">Nunito Sans — Aa Bb Cc</div>
+      <div class="type-meta">
+        Body copy mainly uses <strong>Nunito Sans</strong>, though the exact treatment depends on the format and design — copy-heavy layouts, CRM, product copy etc. may vary by channel.<br>
+        <em>Disclaimer: sub-copy/body typography is applied at the designer's discretion per format — treat the above as general guidance, not a fixed rule.</em>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Logo Downloads</h2>
+    <div class="section-note">Each pack includes the master files in PNG, JPG, PDF, AI and EPS (plus SVG where available), in both black and white versions.</div>
+    <div class="card-grid">
+      <a class="card" href="assets/downloads/ounass-logo-english.zip" download>
+        <span class="card-arrow download">⬇</span>
+        <div class="card-title">English Logo Pack</div>
+        <div class="card-sub">Wordmark, ounass.com pre-launch logo &amp; logo+tagline — PNG / JPG / PDF / AI / EPS / SVG</div>
+      </a>
+      <a class="card" href="assets/downloads/ounass-logo-arabic.zip" download>
+        <span class="card-arrow download">⬇</span>
+        <div class="card-title">Arabic Logo Pack</div>
+        <div class="card-sub">أناس wordmark &amp; logo+tagline — PNG / JPG / PDF / AI / EPS / SVG</div>
+      </a>
+      <a class="card" href="assets/downloads/ounass-o-monogram.zip" download>
+        <span class="card-arrow download">⬇</span>
+        <div class="card-title">O Monogram</div>
+        <div class="card-sub">Black &amp; white PNG + AI</div>
+      </a>
+      <a class="card" href="assets/downloads/ounass-marque.zip" download>
+        <span class="card-arrow download">⬇</span>
+        <div class="card-title">The Marque</div>
+        <div class="card-sub">Seal / sticker use only — PNG / JPG / PDF / AI / EPS + copper version</div>
+      </a>
+      <a class="card" href="assets/downloads/ounass-copper-logos.zip" download>
+        <span class="card-arrow download">⬇</span>
+        <div class="card-title">Copper Foil Logos</div>
+        <div class="card-sub">English &amp; Arabic copper foil versions — PNG / AI</div>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Font Downloads</h2>
+    <div class="card-grid">
+      <a class="card" href="assets/downloads/ounass-font-portrait.zip" download>
+        <span class="card-arrow download">⬇</span>
+        <div class="card-title">Portrait (Primary)</div>
+        <div class="card-sub">Full family — Light, Regular 2 (main usage), Medium, Bold, Heavy + italics — OTF. Licensed font, internal use only.</div>
+      </a>
+      <a class="card" href="assets/downloads/ounass-font-noto-kufi-arabic.zip" download>
+        <span class="card-arrow download">⬇</span>
+        <div class="card-title">Noto Kufi Arabic</div>
+        <div class="card-sub">Primary Arabic typeface — variable TTF, free &amp; open source</div>
+      </a>
+      <a class="card" href="assets/downloads/ounass-font-noto-serif-display.zip" download>
+        <span class="card-arrow download">⬇</span>
+        <div class="card-title">Noto Serif Display</div>
+        <div class="card-sub">Main numericals font — variable TTF, free &amp; open source</div>
+      </a>
+      <a class="card" href="assets/downloads/ounass-font-nunito-sans.zip" download>
+        <span class="card-arrow download">⬇</span>
+        <div class="card-title">Nunito Sans</div>
+        <div class="card-sub">Included in the brand kit — no documented usage notes in current guidelines</div>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Packaging</h2>
+
+    <div class="subhead">Packaging Assets &amp; Photography</div>
+    <div class="card-grid" style="grid-template-columns: repeat(4, 1fr);">
+      <a class="card" href="https://www.dropbox.com/scl/fo/dg5a0h0h236fc7pja17ns/ADr8VrtZfkUkgoZijEFR_gg?rlkey=hwpdf2vjr78ukiokkvcimnn4r&dl=0" target="_blank" rel="noopener" style="padding:0; overflow:hidden;">
+        <div style="height:160px; overflow:hidden;"><img src="assets/previews/packaging_white_box.jpg" alt="White Ounass Box (Primary)" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+        <div style="padding:14px 16px;">
+          <span class="card-arrow">↗</span>
+          <div class="card-title" style="font-size:13.5px;">White Ounass Box <em>(Primary)</em></div>
+          <div class="card-sub">Dropbox folder</div>
+        </div>
+      </a>
+      <a class="card" href="https://www.dropbox.com/scl/fo/00hugdizcz6qxmfa8vzaq/AFRsJ1vr47o2T7FHjEA0Hzo?rlkey=aw8uls4fsg1jeva8gbskp1h6z&dl=0" target="_blank" rel="noopener" style="padding:0; overflow:hidden;">
+        <div style="height:160px; overflow:hidden;"><img src="assets/previews/packaging_eco_box.jpg" alt="Eco Ounass Box" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+        <div style="padding:14px 16px;">
+          <span class="card-arrow">↗</span>
+          <div class="card-title" style="font-size:13.5px;">Eco Ounass Box</div>
+          <div class="card-sub">Dropbox folder</div>
+        </div>
+      </a>
+      <a class="card" href="https://www.dropbox.com/scl/fo/2llrzhsraop7gybx1hb31/AMqj0AoEuLYK7GGjRLo7Cy4?rlkey=3nnrvc9cu9bx88t1tc4865nyi&dl=0" target="_blank" rel="noopener" style="padding:0; overflow:hidden;">
+        <div style="height:160px; overflow:hidden;"><img src="assets/previews/packaging_with_paper.jpg" alt="White Boxes with Paper" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+        <div style="padding:14px 16px;">
+          <span class="card-arrow">↗</span>
+          <div class="card-title" style="font-size:13.5px;">White Boxes with Paper</div>
+          <div class="card-sub">Dropbox folder</div>
+        </div>
+      </a>
+      <a class="card" href="https://www.dropbox.com/scl/fo/v7vvhzirit7l65ceqozd6/AF8Y4oKMMbzPS5hoLGerhPY?rlkey=9rvjngr0qng4ruoslsle9gg53&dl=0" target="_blank" rel="noopener" style="padding:0; overflow:hidden;">
+        <div style="height:160px; overflow:hidden;"><img src="assets/previews/packaging_imagery.jpg" alt="Different Packaging Imagery" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+        <div style="padding:14px 16px;">
+          <span class="card-arrow">↗</span>
+          <div class="card-title" style="font-size:13.5px;">Different Packaging Imagery</div>
+          <div class="card-sub">Dropbox folder</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="subhead">Reference Pages (from Brand Guidelines)</div>
+    <div class="section-note">
+      Pulled from the 2025 Brand &amp; Creative Guidelines deck (standard boxes + eco-friendly cartons, with dimensions). These are reference pages, not print-ready templates.
+    </div>
+    <div class="card-grid" style="margin-bottom:24px;">
+      <a class="card" href="assets/downloads/ounass-packaging-box-references.zip" download>
+        <span class="card-arrow download">⬇</span>
+        <div class="card-title">Box Packaging Reference Pack</div>
+        <div class="card-sub">4 images — standard box sizes/logo placement + eco-friendly carton top &amp; side views</div>
+      </a>
+    </div>
+    <div class="logo-block">
+      <div class="logo-card light" style="flex:1 1 100%;">
+        <img src="assets/previews/packaging_boxes_dimensions.png" alt="Packaging box dimensions" style="height:260px;">
+        <div class="cap">Box sizes &amp; logo placement</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Guidelines</h2>
+    <div class="card-grid">
+      <a class="card" href="https://www.dropbox.com/scl/fi/of88mnri9zqz0prdhrory/Clevertap-Building-Newsletter-Guidelines.pdf?rlkey=mktea1f5ehj2tgelk3cth5ijr&dl=0" target="_blank" rel="noopener">
+        <span class="card-arrow">↗</span>
+        <div class="card-title">Newsletter Guidelines (Clevertap)</div>
+        <div class="card-sub">Dropbox file</div>
+      </a>
+      <a class="card" href="https://www.figma.com/slides/va0QHfEPq5ESPohB4UFqCr/DM-Guidelines?node-id=4001-67&t=hYUouuTrAEwBMaxG-0" target="_blank" rel="noopener">
+        <span class="card-arrow">↗</span>
+        <div class="card-title">DM Guidelines</div>
+        <div class="card-sub">Figma slides</div>
+      </a>
+      <a class="card" href="https://docs.google.com/presentation/d/1_hM4bI5dYBz4JId83RF0Gqp8jJx9jxyOmXjKGw2r6hY/edit?slide=id.g3c6942ae956_0_0#slide=id.g3c6942ae956_0_0" target="_blank" rel="noopener">
+        <span class="card-arrow">↗</span>
+        <div class="card-title">Brand Exposure Guidelines</div>
+        <div class="card-sub">Google Slides</div>
+      </a>
+      <a class="card" href="https://www.dropbox.com/scl/fo/jay2eesl2tcfxvek8dgx5/ALei-URb-XH897Gpt3gUk9A?rlkey=fmuu3wdgx9r0s975hby3yxhcb&dl=0" target="_blank" rel="noopener">
+        <span class="card-arrow">↗</span>
+        <div class="card-title">Beauty Social Strategy</div>
+        <div class="card-sub">Dropbox folder</div>
+      </a>
+      <a class="card" href="https://www.dropbox.com/scl/fo/j2x1cp1hq200wa1j25qeg/AG-3jDR5PZ5mK-V3kWAhuGY?rlkey=lyjwmxiqqyzmpy7s2i80rs4u3&dl=0" target="_blank" rel="noopener">
+        <span class="card-arrow">↗</span>
+        <div class="card-title">New App Header</div>
+        <div class="card-sub">Dropbox folder</div>
+      </a>
+      <a class="card" href="https://www.dropbox.com/scl/fo/1zh3grwpz0v6i0f7m0ekg/ANp9qR-WvCOEQ6NSEH9raJw?rlkey=g3x39ysjthrvo54uuboumtucq&dl=0" target="_blank" rel="noopener">
+        <span class="card-arrow">↗</span>
+        <div class="card-title">On Boarding Deck</div>
+        <div class="card-sub">Dropbox folder</div>
+      </a>
+      <a class="card" href="https://www.dropbox.com/scl/fo/l9lzjj59ly3abe5lec650/AMD0V7Nsia03DwIpYBW5xc8?rlkey=qa25tdsyrm4s2lrukzeag6zb4&dl=0" target="_blank" rel="noopener">
+        <span class="card-arrow">↗</span>
+        <div class="card-title">PDP Video Guidelines</div>
+        <div class="card-sub">Dropbox folder</div>
+      </a>
+      <a class="card" href="https://www.dropbox.com/scl/fo/vydgbr8w92qv87qyet0vf/AAomEQQ6Dk42wvJzgi5MIZU?rlkey=408qqkcsjqps5qcwwbn08h8bl&dl=0" target="_blank" rel="noopener">
+        <span class="card-arrow">↗</span>
+        <div class="card-title">Visual &amp; Creative (DM) Guidelines for Brand Partners</div>
+        <div class="card-sub">Dropbox folder</div>
+      </a>
+      <a class="card" href="https://www.dropbox.com/scl/fo/ffbnr7qitth8vdui7aos4/AL78rB9E3w6uSspxfLqaPec?rlkey=746wq6ayy2vvaqcs18jj43tu6&dl=0" target="_blank" rel="noopener">
+        <span class="card-arrow">↗</span>
+        <div class="card-title">Social Reel Guidelines</div>
+        <div class="card-sub">Dropbox folder</div>
+      </a>
+      <a class="card" href="https://www.dropbox.com/scl/fo/arjppuro9w5pywgj5j8im/APqsOFz7TYwyDtFzbBgR_bU?rlkey=k6opat7gl1heawqbawiclvye4&dl=0" target="_blank" rel="noopener">
+        <span class="card-arrow">↗</span>
+        <div class="card-title">TikTok Guidelines</div>
+        <div class="card-sub">Dropbox folder</div>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  OUNASS — Internal Brand Reference &middot; Sourced from Brand &amp; Creative Guidelines 2025 &middot; Last updated August 2026
+</footer>
+
+</body>
+</html>
