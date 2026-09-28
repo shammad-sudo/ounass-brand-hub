@@ -602,6 +602,22 @@
   <br><br>
   Questions about using these assets? Contact <a href="mailto:shammad@altayer.com" style="color:var(--copper);">shammad@altayer.com</a>
 </footer>
-
+<style>
+  #internal-gate{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:24px}
+  #internal-gate .gate-box{background:#fff;max-width:440px;width:100%;padding:40px 36px 32px;text-align:center;border-radius:4px}
+  #internal-gate img{height:34px;margin-bottom:22px}
+  #internal-gate h3{font-family:Arial,sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#b87354;margin:0 0 14px}
+  #internal-gate p{font-family:Arial,sans-serif;font-size:13.5px;line-height:1.6;color:#4a4a4a;margin:0 0 26px}
+  #internal-gate button{background:#000;color:#fff;border:none;font-family:Arial,sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:14px 28px;cursor:pointer;border-radius:2px}
+  #internal-gate button:hover{background:#b87354}
+</style>
+<div id="internal-gate" role="dialog" aria-modal="true">
+  <div class="gate-box">
+    <img src="assets/previews/eng_black.png" alt="OUNASS">
+    <h3>Internal Use Only</h3>
+    <p>This brand hub contains confidential OUNASS assets, including licensed fonts. It is for Al Tayer / OUNASS team members only.<br><br><strong>Please do not share this page, its link, or any files from it outside the organisation.</strong></p>
+    <button type="button" onclick="document.getElementById('internal-gate').style.display='none'">I understand</button>
+  </div>
+</div>
 </body>
 </html>
